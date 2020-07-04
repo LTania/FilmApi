@@ -6,5 +6,6 @@
 <p>Year: {{film[0].Year}}</p>
 <p>Awards: {{film[0].Awards}}</p>
 <p>Director: {{film[0].Director}}</p>
-
+<img class="icons-heart" src="../../../assets/icons/white-heart.svg" alt="" *ngIf="!isFavourite " (click)="addToFav(film[0].imdbID)">
+<img class="icons-heart" src="../../../assets/icons/red-heart.svg" alt="" *ngIf="isFavourite" (click)="removeFromFav(film[0].imdbID)">
 

@@ -1,2 +1,5 @@
 <p>{{film[0].Title}}</p>
 <p>{{film[0].Genre}}</p>
+<img class="icons-heart" src="../../../assets/icons/white-heart.svg" alt="" *ngIf="!isFavourite " (click)="addToFav(film[0].imdbID)">
+<img class="icons-heart" src="../../../assets/icons/red-heart.svg" alt="" *ngIf="isFavourite" (click)="removeFromFav(film[0].imdbID)">
+

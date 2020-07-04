@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favourite-films.component.sass']
 })
 export class FavouriteFilmsComponent implements OnInit {
-
-  constructor() { }
-
+  public myFilms = [];
   ngOnInit(): void {
+    this.myFilms = JSON.parse(localStorage.getItem('myFilms'));
   }
-
 }

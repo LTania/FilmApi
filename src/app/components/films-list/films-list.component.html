@@ -1,7 +1,7 @@
 <div class="container">
   <div class = "film-list">
     <div *ngFor="let film of films[0].Search">
-      <img [src]="film.Poster"  (click)="showDetail(film.imdbID)">
+      <img [src]="film.Poster"  (click)="showDetail(film.imdbID)" alt="film-poster">
       <app-film-item [filmId]="film.imdbID"></app-film-item>
     </div>
   </div>

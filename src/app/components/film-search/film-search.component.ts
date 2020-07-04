@@ -27,6 +27,5 @@ export class FilmSearchComponent implements OnInit {
           subscription.unsubscribe();
         }
       );
-    console.log(this.films);
   }
 }
