@@ -10,6 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { FilmsListComponent } from './components/films-list/films-list.component';
 import { FilmDetailsComponent } from './components/film-details/film-details.component';
 import { FilmItemComponent } from './components/film-item/film-item.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FavouriteFilmsComponent } from './components/favourite-films/favourite-films.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FilmItemComponent } from './components/film-item/film-item.component';
     FilmSearchComponent,
     FilmsListComponent,
     FilmDetailsComponent,
-    FilmItemComponent
+    FilmItemComponent,
+    HeaderComponent,
+    FavouriteFilmsComponent
   ],
   imports: [
     BrowserModule,

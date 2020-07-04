@@ -1,13 +1,16 @@
-<input
-  placeholder="Назва фільму"
-  type="text"
-  id="filmName"
-  name="filmName"
-  [(ngModel)]='title'
-  value=""
->
-<button  (click)="getFilms()">Search</button>
-<div *ngIf="notFound ">Film not found </div>
-<ng-template [ngIf]="!notFound"><app-films-list [films]="films"></app-films-list></ng-template>
+<div class="container">
+  <input
+    placeholder="Назва фільму"
+    type="text"
+    id="filmName"
+    name="filmName"
+    [(ngModel)]='title'
+    value=""
+  >
+  <button  (click)="getFilms()">Search</button>
+  <div *ngIf="notFound ">Film not found </div>
+  <ng-template [ngIf]="!notFound"><app-films-list [films]="films"></app-films-list></ng-template>
+</div>
+
 
 
