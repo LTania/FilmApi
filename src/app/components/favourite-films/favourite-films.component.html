@@ -1,4 +1,8 @@
-<p>My Favorite films!</p>
-<div *ngFor="let film of myFilms">
-  <app-film-details [filmId]="film"></app-film-details>
+<div class = "fav-list">
+  <mat-list >
+    <mat-list-item *ngFor="let film of myFilms">
+      <app-film-details [filmId]="film"></app-film-details>
+    </mat-list-item>
+  </mat-list>
 </div>
+

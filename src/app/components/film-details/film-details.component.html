@@ -1,11 +1,28 @@
-<img [src]="film[0].Poster" alt="Poster">
-<p>Title: {{film[0].Title}}</p>
-<p>Rate: {{film[0].imdbRating}}</p>
-<p>Genre: {{film[0].Genre}}</p>
-<p>Country: {{film[0].Country}}</p>
-<p>Year: {{film[0].Year}}</p>
-<p>Awards: {{film[0].Awards}}</p>
-<p>Director: {{film[0].Director}}</p>
-<img class="icons-heart" src="../../../assets/icons/white-heart.svg" alt="" *ngIf="!isFavourite " (click)="addToFav(film[0].imdbID)">
-<img class="icons-heart" src="../../../assets/icons/red-heart.svg" alt="" *ngIf="isFavourite" (click)="removeFromFav(film[0].imdbID)">
+<div *ngIf="router.url !== '/fav-films'; else favFilms">
+  <img [src]="film[0].Poster" alt="Poster">
+  <ng-container *ngTemplateOutlet="filmInfo">
+  </ng-container>
+</div>
+<ng-template #favFilms>
+  <div class="container">
+    <div>
+      <img id = "favImg" [src]="film[0].Poster" alt="Poster">
+    </div>
+    <div>
+      <ng-container *ngTemplateOutlet="filmInfo">
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
+<ng-template #filmInfo>
+  <p>Title: {{film[0].Title}}</p>
+  <p>Rate: {{film[0].imdbRating}}</p>
+  <p>Genre: {{film[0].Genre}}</p>
+  <p>Country: {{film[0].Country}}</p>
+  <p>Year: {{film[0].Year}}</p>
+  <p>Awards: {{film[0].Awards}}</p>
+  <p>Director: {{film[0].Director}}</p>
+  <img class="icons-heart" src="../../../assets/icons/white-heart.svg" alt="" *ngIf="!isFavourite " (click)="addToFav(film[0].imdbID)">
+  <img class="icons-heart" src="../../../assets/icons/red-heart.svg" alt="" *ngIf="isFavourite" (click)="removeFromFav(film[0].imdbID)">
+</ng-template>
 

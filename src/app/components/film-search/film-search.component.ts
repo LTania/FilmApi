@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {FilmService} from '../../core/film.service';
 
 @Component({
@@ -6,15 +6,12 @@ import {FilmService} from '../../core/film.service';
   templateUrl: './film-search.component.html',
   styleUrls: ['./film-search.component.sass']
 })
-export class FilmSearchComponent implements OnInit {
+export class FilmSearchComponent {
   public title = '';
   public films = [];
   public notFound = false;
 
   constructor(public service: FilmService) {
-  }
-
-  ngOnInit(): void {
   }
   getFilms() {
     this.films = [];

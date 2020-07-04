@@ -1,14 +1,10 @@
 <div class="container">
-  <input
-    placeholder="Назва фільму"
-    type="text"
-    id="filmName"
-    name="filmName"
-    [(ngModel)]='title'
-    value=""
-  >
-  <button  (click)="getFilms()">Search</button>
-  <div *ngIf="notFound ">Film not found </div>
+  <mat-form-field >
+    <mat-label>Enter film title</mat-label>
+    <input matInput placeholder="Ex. Harry Potter" value="Harry Potter" [(ngModel)]='title'>
+  </mat-form-field>
+  <button mat-raised-button color="primary"(click)="getFilms()">Search</button>
+  <div *ngIf="notFound "  >Film not found </div>
   <ng-template [ngIf]="!notFound"><app-films-list [films]="films"></app-films-list></ng-template>
 </div>
 

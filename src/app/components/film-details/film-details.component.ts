@@ -1,5 +1,6 @@
 import {Component, Input, OnChanges} from '@angular/core';
 import {FilmService} from '../../core/film.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-film-details',
@@ -13,7 +14,7 @@ export class FilmDetailsComponent implements OnChanges {
   public isFavourite = false;
   private myFilms = [];
 
-  constructor(private service: FilmService) { }
+  constructor(private service: FilmService, public router: Router) { }
 
   ngOnChanges(): void {
     this.notFound = false;
